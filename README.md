@@ -20,7 +20,7 @@ This project implements a simple ERC20 token using Solidity. It includes the fol
 
 ## Project Overview
 
-This project is a foundational implementation of an ERC20 token called `Token` with the symbol `TKN`. The token is initialized with a fixed supply upon deployment and adheres to the ERC20 standard.
+This project is a foundational implementation of an ERC20 token called `Token` with the symbol `TKN` for [cyfrin updraft](https://updraft.cyfrin.io/) course Advanced Foundry. The token is initialized with a fixed supply upon deployment and adheres to the ERC20 standard.
 
 ### Features
 
