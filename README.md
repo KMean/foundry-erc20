@@ -1,66 +1,42 @@
-## Foundry
+# Foundry Lottery
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+A decentralized lottery smart contract built with Foundry, inspired by the Cyfrin Updrafts course. This project demonstrates how to create a secure and efficient lottery system on the Ethereum blockchain using Chainlink VRF for randomness.
 
-Foundry consists of:
+---
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Features
 
-## Documentation
+- **Decentralized Lottery System**: Secure and transparent entry process.
+- **Random Winner Selection**: Uses Chainlink VRF for unbiased randomness.
+- **Automation**: Employs Chainlink Keepers for periodic upkeep and lottery resets.
+- **Customizable**: Adjustable lottery parameters like entry fee and duration.
 
-https://book.getfoundry.sh/
+---
 
-## Usage
+## Prerequisites
 
-### Build
+Before you begin, ensure you have the following installed:
 
-```shell
-$ forge build
-```
+- [Foundry](https://getfoundry.sh/)
+- [Node.js](https://nodejs.org/) and npm
+- A blockchain wallet (e.g., MetaMask)
+- Access to a testnet like Sepolia or Polygon Amoy
 
-### Test
+---
 
-```shell
-$ forge test
-```
+## Setup
 
-### Format
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/KMean/foundry-lottery.git
+   cd foundry-lottery
+   ```
 
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+2. Install Dependencies
+    ```bash
+    forge install
+    ```
+3. Set up environment variables: Create a .env file with the following:
+    ```env
+    SEPOLIA_RPC_URL=your-rpc-url
+    
