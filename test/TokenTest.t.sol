@@ -82,10 +82,32 @@ contract TokenTest is Test {
         token.approve(address(0), 100 ether);
     }
 
-    function testTransferZeroTokens() public {
+    // Edge Case: Transfer the entire balance
+    function testTransferFullBalance() public {
         vm.prank(user1);
-        token.transfer(user2, 0);
+        token.transfer(user2, STARTING_BALANCE);
+        assertEq(token.balanceOf(user1), 0);
+        assertEq(token.balanceOf(user2), STARTING_BALANCE);
+    }
+
+    // Edge Case: Transfer with 0 tokens
+    function testTransferZeroTokens() public {
+        vm.prank(user2); // user2 has 0 tokens
+        token.transfer(user1, 0);
         assertEq(token.balanceOf(user1), STARTING_BALANCE);
         assertEq(token.balanceOf(user2), 0);
+    }
+
+    // Update an existing allowance
+    function testUpdateAllowance() public {
+        uint256 initialAllowance = 50 ether;
+        uint256 updatedAllowance = 100 ether;
+        vm.prank(user1);
+        token.approve(user2, initialAllowance);
+        assertEq(token.allowance(user1, user2), initialAllowance);
+
+        vm.prank(user1);
+        token.approve(user2, updatedAllowance);
+        assertEq(token.allowance(user1, user2), updatedAllowance);
     }
 }
