@@ -58,11 +58,11 @@ forge script script/DeployToken.s.sol:DeployToken --rpc-url <RPC_URL> --private-
 ## Tests
 The project includes a comprehensive test suite written with Foundry's forge-std library. The tests cover:
 
-Deployment correctness.
-Transfers and allowances.
-Edge cases (e.g., transferring to a zero address, transferring zero tokens).
-Failure cases (e.g., insufficient balance, insufficient allowance).
-Event emission (Transfer and Approval).
+- Deployment correctness.
+- Transfers and allowances.
+- Edge cases (e.g., transferring to a zero address, transferring zero tokens).
+- Failure cases (e.g., insufficient balance, insufficient allowance).
+
 ### Run Tests
 To run the test suite:
 ```bash
